@@ -1,4 +1,30 @@
 
+patches-own
+[
+  live?
+  live_neighbors
+]
+
+to setup
+  clear-all
+  ask patches
+  [
+    ifelse random 100 < starting-density
+    [ spawn_cell ]
+    [ kill_cell ]
+  ]
+  reset-ticks
+end
+
+to spawn_cell
+  set live? true
+  set pcolor red
+end
+
+to kill_cell
+  set live? false
+  set pcolor white
+end
 @#$#@#$#@
 GRAPHICS-WINDOW
 210
@@ -77,6 +103,21 @@ NIL
 NIL
 NIL
 1
+
+SLIDER
+27
+105
+199
+138
+starting-density
+starting-density
+0
+100
+30.0
+1
+1
+NIL
+HORIZONTAL
 
 @#$#@#$#@
 ## WHAT IS IT?
