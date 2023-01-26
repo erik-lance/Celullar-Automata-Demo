@@ -32,13 +32,19 @@ to go
     set live_neighbors count neighbors with [live?]
   ]
 
+
   ;; ----- rule set ----- ;;
   ask patches
   [
-    ifelse live_neighbors = 3
-    [ spawn_cell]
-    [ if live_neighbors != 2
-      [ kill_cell ]
+    if-else live_neighbors = 3
+    [
+      spawn_cell
+    ]
+    [ ;; else
+      if live_neighbors != 2
+      [
+        kill_cell
+      ]
     ]
   ]
 
