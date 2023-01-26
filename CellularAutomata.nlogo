@@ -25,15 +25,34 @@ to kill_cell
   set live? false
   set pcolor white
 end
+
+to go
+  ask patches
+  [
+    set live_neighbors count neighbors with [live?]
+  ]
+
+  ;; ----- rule set ----- ;;
+  ask patches
+  [
+    ifelse live_neighbors = 3
+    [ spawn_cell]
+    [ if live_neighbors != 2
+      [ kill_cell ]
+    ]
+  ]
+
+  tick
+end
 @#$#@#$#@
 GRAPHICS-WINDOW
 210
 10
-647
-448
+723
+524
 -1
 -1
-13.0
+5.0
 1
 10
 1
@@ -43,10 +62,10 @@ GRAPHICS-WINDOW
 1
 1
 1
--16
-16
--16
-16
+-50
+50
+-50
+50
 0
 0
 1
@@ -75,8 +94,8 @@ BUTTON
 185
 93
 218
-NIL
 go-once
+go
 NIL
 1
 T
@@ -92,8 +111,8 @@ BUTTON
 186
 186
 219
-NIL
 go-forever
+go
 T
 1
 T
@@ -113,7 +132,7 @@ starting-density
 starting-density
 0
 100
-30.0
+41.0
 1
 1
 NIL
