@@ -22,7 +22,7 @@ to spawn_cell
   set live? true
   ;set pcolor red
   set female? one-of [true false]
-  ifelse female? [set pcolor pink][set pcolor red]
+  ifelse female? [set pcolor pink][set pcolor blue]
 end
 
 to kill_cell
@@ -40,41 +40,42 @@ to go
   ;; ----- rule set ----- ;;
   ask patches
   [
-
-    ifelse female? = false [
-      if live_female != 0[
-        ifelse live_neighbors = 3
-        [
-          spawn_cell
-        ]
-        [ ;; else
-          if live_neighbors != 2
-          [
-            kill_cell
-          ]
-
-        ]
-      ]
-    ][
-      if live_male != 0[
-        ifelse live_neighbors = 3
-        [
-          spawn_cell
-        ]
-        [ ;; else
-          if live_neighbors != 2
-          [
-            kill_cell
-          ]
-          if live_female < live_male [
-            kill_cell
-        ]
-        ]
-
-      ]
+    if live_female  live_male [
+      spawn_cell
     ]
+    ifelse female? = false [
+      ifelse live_female != 0[
+        ifelse live_neighbors = 3
+        [
+          spawn_cell
+        ]
+        [ ;; else
+          if live_neighbors != 2
+          [
+            kill_cell
+          ]
 
+        ]
+      ][ kill_cell ]
+    ][
+      ifelse live_male != 0[
+        ifelse live_neighbors = 3
+        [
+          spawn_cell
+        ]
+        [ ;; else
+          if live_neighbors != 2
+          [
+            kill_cell
+          ]
+
+        ]
+
+      ][ kill_cell ]
+    ]
   ]
+
+
 
   tick
 end
@@ -82,11 +83,11 @@ end
 GRAPHICS-WINDOW
 210
 10
-706
-507
+628
+429
 -1
 -1
-8.0
+10.0
 1
 10
 1
@@ -96,10 +97,10 @@ GRAPHICS-WINDOW
 1
 1
 1
--30
-30
--30
-30
+-20
+20
+-20
+20
 0
 0
 1
@@ -166,7 +167,7 @@ starting-density
 starting-density
 0
 100
-34.0
+24.0
 1
 1
 NIL
