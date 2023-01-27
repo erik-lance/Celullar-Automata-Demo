@@ -20,7 +20,6 @@ end
 
 to spawn_cell
   set live? true
-  ;set pcolor
   set female? one-of [true false]
   ifelse female? [set pcolor pink][set pcolor blue]
 end
@@ -43,6 +42,8 @@ to go
     if live_female = live_male [
       spawn_cell
     ]
+
+    ;; patch o
     ifelse female? = false [
       ifelse live_female != 0[
         ifelse live_neighbors = 3
@@ -57,7 +58,7 @@ to go
 
         ]
       ][ kill_cell ]
-    ][
+    ][ ;; else patch is female
       ifelse live_male != 0[
         ifelse live_neighbors = 3
         [
