@@ -40,7 +40,7 @@ to go
   ;; ----- rule set ----- ;;
   ask patches
   [
-    if live_female  live_male [
+    if live_female = live_male [
       spawn_cell
     ]
     ifelse female? = false [
