@@ -20,7 +20,7 @@ end
 
 to spawn_cell
   set live? true
-  ;set pcolor red
+  ;set pcolor
   set female? one-of [true false]
   ifelse female? [set pcolor pink][set pcolor blue]
 end
@@ -68,9 +68,7 @@ to go
           [
             kill_cell
           ]
-
         ]
-
       ][ kill_cell ]
     ]
   ]
@@ -167,7 +165,7 @@ starting-density
 starting-density
 0
 100
-24.0
+29.0
 1
 1
 NIL
