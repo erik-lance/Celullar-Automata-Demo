@@ -4,13 +4,11 @@
 ## Model
 Our cellular automata is based off of Conway's game of life with some of our own adjustments. It was made in NetLogo. 
 
-Originally we constructed it by simply mimicking the rules seen in the game of life ending up with the below model:
+Originally we constructed it by simply mimicking the rules seen in the game of life. Afterwards, to study more on Cellular Automata, we decided to try experimenting as well by implementing a distinguishing factor amongst the cells which is their sex. It is going to change how the cells interact both on how they increase and decrease. Below is how the two models looks like.
 
-<p align="center"><a href="https://github.com/erik-lance/Celullar-Automata-Demo/blob/master/img/ca_ver_1.gif"><img src="https://github.com/erik-lance/Celullar-Automata-Demo/blob/master/img/ca_ver_1.gif" width=25% height=25%></a></p>
-
-Afterwards, to study more on Cellular Automata, we decided to try experimenting as well by implementing a distinguishing factor amongst the cells which is their sex. It is going to change how the cells interact both on how they increase and decrease. Below is how the final model looks like.
-
-<p align="center"><a href="https://github.com/erik-lance/Celullar-Automata-Demo/blob/master/img/ca_ver_2.gif"><img src="https://github.com/erik-lance/Celullar-Automata-Demo/blob/master/img/ca_ver_2.gif" width=25% height=25%></a></p>
+| Original Model | Updated model |
+| ------------------- | ------------------- |
+| <p align="center"><a href="https://github.com/erik-lance/Celullar-Automata-Demo/blob/master/img/ca_ver_1.gif"><img src="https://github.com/erik-lance/Celullar-Automata-Demo/blob/master/img/ca_ver_1.gif" width=25% height=25%></a></p> | <p align="center"><a href="https://github.com/erik-lance/Celullar-Automata-Demo/blob/master/img/ca_ver_2.gif"><img src="https://github.com/erik-lance/Celullar-Automata-Demo/blob/master/img/ca_ver_2.gif" width=25% height=25%></a></p> |
 
 We wanted to simulate how reproduction may work with two different sexes that need each other to reproduce unlike the original game of life where the cells are sexless. In turn, our model didn't reduce in size, rather it increased because of reproduction.
 
