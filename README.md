@@ -8,7 +8,7 @@ Originally we constructed it by simply mimicking the rules seen in the game of l
 
 | Original Model | Updated model |
 | ------------------- | ------------------- |
-| <p align="center"><a href="https://github.com/erik-lance/Celullar-Automata-Demo/blob/master/img/ca_ver_1.gif"><img src="https://github.com/erik-lance/Celullar-Automata-Demo/blob/master/img/ca_ver_1.gif" width=40% height=40%></a></p> | <p align="center"><a href="https://github.com/erik-lance/Celullar-Automata-Demo/blob/master/img/ca_ver_2.gif"><img src="https://github.com/erik-lance/Celullar-Automata-Demo/blob/master/img/ca_ver_2.gif" width=40% height=40%></a></p> |
+| <p align="center"><a href="https://github.com/erik-lance/Celullar-Automata-Demo/blob/master/img/ca_ver_1.gif"><img src="https://github.com/erik-lance/Celullar-Automata-Demo/blob/master/img/ca_ver_1.gif" width=50% height=50%></a></p> | <p align="center"><a href="https://github.com/erik-lance/Celullar-Automata-Demo/blob/master/img/ca_ver_2.gif"><img src="https://github.com/erik-lance/Celullar-Automata-Demo/blob/master/img/ca_ver_2.gif" width=50% height=50%></a></p> |
 
 We wanted to simulate how reproduction may work with two different sexes that need each other to reproduce unlike the original game of life where the cells are sexless. In turn, our model didn't reduce in size, rather it increased because of reproduction.
 
