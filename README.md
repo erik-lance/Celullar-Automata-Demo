@@ -1,9 +1,39 @@
 # Celullar-Automata-Demo
- Mini async task for CMPLXSY to construct an own CA implementation
+ Mini async task for CMPLXSY to construct our own CA implementation
 
-#### Model
+## Model
+Our cellular automata is based off of Conway's game of life with some of our own adjustments. It was made in NetLogo. 
 
-#### Rules
+Originally we constructed it by simply mimicking the rules seen in the game of life ending up with the below model:
+
+<img src="https://github.com/erik-lance/Cellular-Automata-Demo/img/ca_orig_1.gif" width=50% height=50%>
+
+Afterwards, to study more on Cellular Automata, we decided to try experimenting as well by implementing a distinguishing factor amongst the cells which is their sex. It is going to change how the cells interact both on how they increase and decrease. Below is how the final model looks like.
+
+<img src="https://github.com/erik-lance/Cellular-Automata-Demo/img/ca_orig_2.gif" width=50% height=50%>
+
+We wanted to simulate how reproduction may work with two different sexes that need each other to reproduce unlike the original game of life where the cells are sexless. In turn, our model didn't reduce in size, rather it increased because of reproduction.
+
+We recommend using a starting-density of 8 to see the model in action clearly. With a tick speed 35% of the tick bar.
+
+There are 3 cell types. We have a dead/empty cell which is white, blue for a male cell, and pink for a female cell. The patches interact based on 5 variables which are
+
+```
+patches-own
+[
+  live?
+  live_neighbors
+  female?
+  live_female
+  live_male
+]
+```
+
+Where `live?` checks if the cell is living, `live_neighbors` checks for neighbors that are still living, `female?` checks if cell is a female, and the `live_female`, `live_male` variables simply check the number of live female/male cells in their vicinity.
+
+After completing this task, we realized that the Cellular Automata we created takes up more space in a grid than it would originally. This may be due to the distinction of cell gender allow more space being taken in the grid.
+
+## Rules
 In this version of Game of Life, similar rules still apply with new additional rules for experimentation with Cellular Automata. Aside from the original two states of live or dead, the patches/cells can also either be male or female cells. This model checks whether the cell is a male or female, and whether their neighbor is a living male or female cell. These cells still interact horizontally, vertically, and diagonally with eight of their neighbors.
 
 With each tick or time step, the following rules are applied:
